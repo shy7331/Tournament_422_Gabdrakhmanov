@@ -7,8 +7,51 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CreateTournamentPage">
+    <Grid Margin="10" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-    <Grid>
+       
+        <TextBlock Text="Создание нового турнира"
+                   FontSize="24" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+
+      
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="400">
+          
+            <TextBlock Text="Название турнира" Margin="0,2,0,5"/>
+            <TextBox x:Name="NameTextBox" Height="20"/>
+
         
+            <TextBlock Text="Игра" Margin="0,10,0,5"/>
+            <ComboBox x:Name="GameComboBox" Height="20"/>
+
+          
+            <TextBlock Text="Формат" Margin="0,10,0,5"/>
+            <ComboBox x:Name="FormatComboBox" Height="20"/>
+
+       
+            <TextBlock Text="Дата проведения" Margin="0,10,0,5"/>
+            <DatePicker x:Name="DatePicker" Height="20"/>
+
+            
+            <TextBlock Text="Призовой фонд" Margin="0,10,0,5"/>
+            <TextBox x:Name="PrizeFundTextBox" Height="20"/>
+
+           
+            <TextBlock Text="Количество участников" Margin="0,10,0,5"/>
+            <TextBox x:Name="ParticipantsTextBox" Height="20"/>
+
+           
+            <TextBlock Text="Статус" Margin="0,10,0,5"/>
+            <ComboBox x:Name="StatusComboBox" Height="20"/>
+
+           
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <Button Content="Создать" Width="100" Height="20" Margin="10,0" Click="CreateButton_Click"/>
+                <Button Content="Отмена" Width="100" Height="20" Margin="10,0" Click="CancelButton_Click"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

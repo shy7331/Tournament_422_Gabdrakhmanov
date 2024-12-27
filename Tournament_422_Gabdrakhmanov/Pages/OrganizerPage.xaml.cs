@@ -51,6 +51,11 @@ namespace Tournament_422_Gabdrakhmanov.Pages
            
             NavigationService.Navigate(new CreateTournamentPage());
         }
+
+        private void AddParticipantButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddParticipantPage());
+        }
     }
 }
 

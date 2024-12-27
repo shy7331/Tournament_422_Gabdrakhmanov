@@ -26,10 +26,7 @@
       
             <TabItem Header="Турниры">
                 <StackPanel>
-                    <Button Content="Создать новый турнир"
-                            HorizontalAlignment="Left"
-                            Margin="0,0,0,10"
-                            Click="CreateTournamentButton_Click"/>
+                    <Button Content="Создать новый турнир" HorizontalAlignment="Left" Margin="0,0,0,10" Click="CreateTournamentButton_Click"/>
                     <DataGrid x:Name="TournamentsDataGrid" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,0,10">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
@@ -59,6 +56,7 @@
             
             <TabItem Header="Участники">
                 <StackPanel>
+                    <Button Content="Добавить нового участника" HorizontalAlignment="Left" Margin="0,0,0,10" Click="AddParticipantButton_Click"/>
                     <DataGrid x:Name="ParticipantsDataGrid" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
