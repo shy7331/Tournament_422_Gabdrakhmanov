@@ -14,6 +14,6 @@ namespace Tournament_422_Gabdrakhmanov
     /// </summary>
     public partial class App : Application
     {
-        public static TournamentDB_422_GabdrakhmanovEntities db = new TournamentDB_422_GabdrakhmanovEntities();
+        public static TournamentDB_422_GabdraxmanovEntities db = new TournamentDB_422_GabdraxmanovEntities();
     }
 }

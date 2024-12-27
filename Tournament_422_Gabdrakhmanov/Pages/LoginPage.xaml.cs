@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tournament_422_Gabdrakhmanov.Components;
 
 namespace Tournament_422_Gabdrakhmanov.Pages
 {
@@ -20,7 +21,7 @@ namespace Tournament_422_Gabdrakhmanov.Pages
     /// </summary>
     public partial class LoginPage : Page
     {
-        private  db = new Entities();
+        private TournamentDB_422_GabdraxmanovEntities db = new TournamentDB_422_GabdraxmanovEntities();
 
         public LoginPage()
         {
@@ -84,4 +85,4 @@ namespace Tournament_422_Gabdrakhmanov.Pages
         }
     }
 }
-}
+

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище TournamentDB_422_GabdrakhmanovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище TournamentDB_422_GabdraxmanovModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AccesLevel">
           <Key>
             <PropertyRef Name="Id" />
@@ -100,16 +100,6 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="Team">
           <Key>
             <PropertyRef Name="Id" />
@@ -169,7 +159,7 @@
           <Property Name="Login" Type="nvarchar" MaxLength="50" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__Tournamen__Playe__59063A47">
+        <Association Name="FK__Tournamen__Playe__4E88ABD4">
           <End Role="Player" Type="Self.Player" Multiplicity="1" />
           <End Role="TournamentParticipants" Type="Self.TournamentParticipants" Multiplicity="*" />
           <ReferentialConstraint>
@@ -181,19 +171,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tournamen__Playe__6EF57B66">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="TournamentParticipants" Type="Self.TournamentParticipants" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Player">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TournamentParticipants">
-              <PropertyRef Name="PlayerId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Tournamen__TeamI__5DCAEF64">
+        <Association Name="FK__Tournamen__TeamI__534D60F1">
           <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
           <End Role="TournamentTeam" Type="Self.TournamentTeam" Multiplicity="*" />
           <ReferentialConstraint>
@@ -205,19 +183,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tournamen__TeamI__70DDC3D8">
-          <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
-          <End Role="TournamentTeam" Type="Self.TournamentTeam" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Team">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TournamentTeam">
-              <PropertyRef Name="TeamId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Tournamen__Tourn__59FA5E80">
+        <Association Name="FK__Tournamen__Tourn__4F7CD00D">
           <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="1" />
           <End Role="TournamentParticipants" Type="Self.TournamentParticipants" Multiplicity="*" />
           <ReferentialConstraint>
@@ -229,31 +195,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tournamen__Tourn__5EBF139D">
-          <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="0..1" />
-          <End Role="TournamentTeam" Type="Self.TournamentTeam" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tournaments">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TournamentTeam">
-              <PropertyRef Name="TournamentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Tournamen__Tourn__6FE99F9F">
-          <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="1" />
-          <End Role="TournamentParticipants" Type="Self.TournamentParticipants" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tournaments">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TournamentParticipants">
-              <PropertyRef Name="TournamentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Tournamen__Tourn__71D1E811">
+        <Association Name="FK__Tournamen__Tourn__5441852A">
           <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="0..1" />
           <End Role="TournamentTeam" Type="Self.TournamentTeam" Multiplicity="*" />
           <ReferentialConstraint>
@@ -445,7 +387,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище TournamentDB_422_GabdrakhmanovModelContainer">
+        <EntityContainer Name="Хранилище TournamentDB_422_GabdraxmanovModelContainer">
           <EntitySet Name="AccesLevel" EntityType="Self.AccesLevel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Format" EntityType="Self.Format" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
@@ -456,42 +398,25 @@
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Stats" EntityType="Self.Stats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Team" EntityType="Self.Team" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TournamentHistory" EntityType="Self.TournamentHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TournamentParticipants" EntityType="Self.TournamentParticipants" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tournaments" EntityType="Self.Tournaments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TournamentTeam" EntityType="Self.TournamentTeam" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Viewers" EntityType="Self.Viewers" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Tournamen__Playe__59063A47" Association="Self.FK__Tournamen__Playe__59063A47">
+          <AssociationSet Name="FK__Tournamen__Playe__4E88ABD4" Association="Self.FK__Tournamen__Playe__4E88ABD4">
             <End Role="Player" EntitySet="Player" />
             <End Role="TournamentParticipants" EntitySet="TournamentParticipants" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__Playe__6EF57B66" Association="Self.FK__Tournamen__Playe__6EF57B66">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="TournamentParticipants" EntitySet="TournamentParticipants" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__TeamI__5DCAEF64" Association="Self.FK__Tournamen__TeamI__5DCAEF64">
+          <AssociationSet Name="FK__Tournamen__TeamI__534D60F1" Association="Self.FK__Tournamen__TeamI__534D60F1">
             <End Role="Team" EntitySet="Team" />
             <End Role="TournamentTeam" EntitySet="TournamentTeam" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__TeamI__70DDC3D8" Association="Self.FK__Tournamen__TeamI__70DDC3D8">
-            <End Role="Team" EntitySet="Team" />
-            <End Role="TournamentTeam" EntitySet="TournamentTeam" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__Tourn__59FA5E80" Association="Self.FK__Tournamen__Tourn__59FA5E80">
+          <AssociationSet Name="FK__Tournamen__Tourn__4F7CD00D" Association="Self.FK__Tournamen__Tourn__4F7CD00D">
             <End Role="Tournaments" EntitySet="Tournaments" />
             <End Role="TournamentParticipants" EntitySet="TournamentParticipants" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__Tourn__5EBF139D" Association="Self.FK__Tournamen__Tourn__5EBF139D">
-            <End Role="Tournaments" EntitySet="Tournaments" />
-            <End Role="TournamentTeam" EntitySet="TournamentTeam" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__Tourn__6FE99F9F" Association="Self.FK__Tournamen__Tourn__6FE99F9F">
-            <End Role="Tournaments" EntitySet="Tournaments" />
-            <End Role="TournamentParticipants" EntitySet="TournamentParticipants" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__Tourn__71D1E811" Association="Self.FK__Tournamen__Tourn__71D1E811">
+          <AssociationSet Name="FK__Tournamen__Tourn__5441852A" Association="Self.FK__Tournamen__Tourn__5441852A">
             <End Role="Tournaments" EntitySet="Tournaments" />
             <End Role="TournamentTeam" EntitySet="TournamentTeam" />
           </AssociationSet>
@@ -560,7 +485,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="TournamentDB_422_GabdrakhmanovModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="TournamentDB_422_GabdraxmanovModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="AccesLevel">
           <Key>
             <PropertyRef Name="Id" />
@@ -640,8 +565,7 @@
           <Property Name="TotalLoses" Type="Int32" />
           <Property Name="Rating" Type="Int32" />
           <Property Name="TeamId" Type="Int32" />
-          <NavigationProperty Name="TournamentParticipants" Relationship="Self.FK__Tournamen__Playe__59063A47" FromRole="Player" ToRole="TournamentParticipants" />
-          <NavigationProperty Name="TournamentParticipants1" Relationship="Self.FK__Tournamen__Playe__6EF57B66" FromRole="Player" ToRole="TournamentParticipants" />
+          <NavigationProperty Name="TournamentParticipants" Relationship="Self.FK__Tournamen__Playe__4E88ABD4" FromRole="Player" ToRole="TournamentParticipants" />
           <NavigationProperty Name="Role1" Relationship="Self.FK_Player_Role" FromRole="Player" ToRole="Role" />
           <NavigationProperty Name="Team" Relationship="Self.FK_Player_Team" FromRole="Player" ToRole="Team" />
           <NavigationProperty Name="Stats" Relationship="Self.FK_Stats_Player" FromRole="Player" ToRole="Stats" />
@@ -676,16 +600,6 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Tournaments" Relationship="Self.FK_Tournaments_Status" FromRole="Status" ToRole="Tournaments" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="Team">
           <Key>
             <PropertyRef Name="Id" />
@@ -701,8 +615,7 @@
           <NavigationProperty Name="Matches1" Relationship="Self.FK_Matches_Team1" FromRole="Team" ToRole="Matches" />
           <NavigationProperty Name="Player" Relationship="Self.FK_Player_Team" FromRole="Team" ToRole="Player" />
           <NavigationProperty Name="Stats" Relationship="Self.FK_Stats_Team" FromRole="Team" ToRole="Stats" />
-          <NavigationProperty Name="TournamentTeam" Relationship="Self.FK__Tournamen__TeamI__5DCAEF64" FromRole="Team" ToRole="TournamentTeam" />
-          <NavigationProperty Name="TournamentTeam1" Relationship="Self.FK__Tournamen__TeamI__70DDC3D8" FromRole="Team" ToRole="TournamentTeam" />
+          <NavigationProperty Name="TournamentTeam" Relationship="Self.FK__Tournamen__TeamI__534D60F1" FromRole="Team" ToRole="TournamentTeam" />
         </EntityType>
         <EntityType Name="TournamentHistory">
           <Key>
@@ -722,10 +635,8 @@
           <Property Name="TournamentId" Type="Int32" Nullable="false" />
           <Property Name="PlayerId" Type="Int32" Nullable="false" />
           <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Player" Relationship="Self.FK__Tournamen__Playe__59063A47" FromRole="TournamentParticipants" ToRole="Player" />
-          <NavigationProperty Name="Player1" Relationship="Self.FK__Tournamen__Playe__6EF57B66" FromRole="TournamentParticipants" ToRole="Player" />
-          <NavigationProperty Name="Tournaments" Relationship="Self.FK__Tournamen__Tourn__59FA5E80" FromRole="TournamentParticipants" ToRole="Tournaments" />
-          <NavigationProperty Name="Tournaments1" Relationship="Self.FK__Tournamen__Tourn__6FE99F9F" FromRole="TournamentParticipants" ToRole="Tournaments" />
+          <NavigationProperty Name="Player" Relationship="Self.FK__Tournamen__Playe__4E88ABD4" FromRole="TournamentParticipants" ToRole="Player" />
+          <NavigationProperty Name="Tournaments" Relationship="Self.FK__Tournamen__Tourn__4F7CD00D" FromRole="TournamentParticipants" ToRole="Tournaments" />
         </EntityType>
         <EntityType Name="Tournaments">
           <Key>
@@ -745,10 +656,8 @@
           <NavigationProperty Name="Matches" Relationship="Self.FK_Matches_Tournaments" FromRole="Tournaments" ToRole="Matches" />
           <NavigationProperty Name="Status" Relationship="Self.FK_Tournaments_Status" FromRole="Tournaments" ToRole="Status" />
           <NavigationProperty Name="TournamentHistory" Relationship="Self.FK_TournamentHistory_Tournaments" FromRole="Tournaments" ToRole="TournamentHistory" />
-          <NavigationProperty Name="TournamentParticipants" Relationship="Self.FK__Tournamen__Tourn__59FA5E80" FromRole="Tournaments" ToRole="TournamentParticipants" />
-          <NavigationProperty Name="TournamentParticipants1" Relationship="Self.FK__Tournamen__Tourn__6FE99F9F" FromRole="Tournaments" ToRole="TournamentParticipants" />
-          <NavigationProperty Name="TournamentTeam" Relationship="Self.FK__Tournamen__Tourn__5EBF139D" FromRole="Tournaments" ToRole="TournamentTeam" />
-          <NavigationProperty Name="TournamentTeam1" Relationship="Self.FK__Tournamen__Tourn__71D1E811" FromRole="Tournaments" ToRole="TournamentTeam" />
+          <NavigationProperty Name="TournamentParticipants" Relationship="Self.FK__Tournamen__Tourn__4F7CD00D" FromRole="Tournaments" ToRole="TournamentParticipants" />
+          <NavigationProperty Name="TournamentTeam" Relationship="Self.FK__Tournamen__Tourn__5441852A" FromRole="Tournaments" ToRole="TournamentTeam" />
         </EntityType>
         <EntityType Name="TournamentTeam">
           <Key>
@@ -758,10 +667,8 @@
           <Property Name="TournamentId" Type="Int32" />
           <Property Name="TeamId" Type="Int32" />
           <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Team" Relationship="Self.FK__Tournamen__TeamI__5DCAEF64" FromRole="TournamentTeam" ToRole="Team" />
-          <NavigationProperty Name="Team1" Relationship="Self.FK__Tournamen__TeamI__70DDC3D8" FromRole="TournamentTeam" ToRole="Team" />
-          <NavigationProperty Name="Tournaments" Relationship="Self.FK__Tournamen__Tourn__5EBF139D" FromRole="TournamentTeam" ToRole="Tournaments" />
-          <NavigationProperty Name="Tournaments1" Relationship="Self.FK__Tournamen__Tourn__71D1E811" FromRole="TournamentTeam" ToRole="Tournaments" />
+          <NavigationProperty Name="Team" Relationship="Self.FK__Tournamen__TeamI__534D60F1" FromRole="TournamentTeam" ToRole="Team" />
+          <NavigationProperty Name="Tournaments" Relationship="Self.FK__Tournamen__Tourn__5441852A" FromRole="TournamentTeam" ToRole="Tournaments" />
         </EntityType>
         <EntityType Name="Viewers">
           <Key>
@@ -879,19 +786,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tournamen__Playe__59063A47">
-          <End Role="Player" Type="Self.Player" Multiplicity="1" />
-          <End Role="TournamentParticipants" Type="Self.TournamentParticipants" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Player">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TournamentParticipants">
-              <PropertyRef Name="PlayerId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Tournamen__Playe__6EF57B66">
+        <Association Name="FK__Tournamen__Playe__4E88ABD4">
           <End Role="Player" Type="Self.Player" Multiplicity="1" />
           <End Role="TournamentParticipants" Type="Self.TournamentParticipants" Multiplicity="*" />
           <ReferentialConstraint>
@@ -963,19 +858,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tournamen__TeamI__5DCAEF64">
-          <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
-          <End Role="TournamentTeam" Type="Self.TournamentTeam" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Team">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TournamentTeam">
-              <PropertyRef Name="TeamId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Tournamen__TeamI__70DDC3D8">
+        <Association Name="FK__Tournamen__TeamI__534D60F1">
           <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
           <End Role="TournamentTeam" Type="Self.TournamentTeam" Multiplicity="*" />
           <ReferentialConstraint>
@@ -999,7 +882,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tournamen__Tourn__59FA5E80">
+        <Association Name="FK__Tournamen__Tourn__4F7CD00D">
           <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="1" />
           <End Role="TournamentParticipants" Type="Self.TournamentParticipants" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1011,19 +894,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tournamen__Tourn__6FE99F9F">
-          <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="1" />
-          <End Role="TournamentParticipants" Type="Self.TournamentParticipants" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tournaments">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TournamentParticipants">
-              <PropertyRef Name="TournamentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Tournamen__Tourn__5EBF139D">
+        <Association Name="FK__Tournamen__Tourn__5441852A">
           <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="0..1" />
           <End Role="TournamentTeam" Type="Self.TournamentTeam" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1035,19 +906,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tournamen__Tourn__71D1E811">
-          <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="0..1" />
-          <End Role="TournamentTeam" Type="Self.TournamentTeam" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tournaments">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TournamentTeam">
-              <PropertyRef Name="TournamentId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="TournamentDB_422_GabdrakhmanovEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="TournamentDB_422_GabdraxmanovEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AccesLevel" EntityType="Self.AccesLevel" />
           <EntitySet Name="Format" EntityType="Self.Format" />
           <EntitySet Name="Game" EntityType="Self.Game" />
@@ -1058,7 +917,6 @@
           <EntitySet Name="Role" EntityType="Self.Role" />
           <EntitySet Name="Stats" EntityType="Self.Stats" />
           <EntitySet Name="Status" EntityType="Self.Status" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Team" EntityType="Self.Team" />
           <EntitySet Name="TournamentHistory" EntityType="Self.TournamentHistory" />
           <EntitySet Name="TournamentParticipants" EntityType="Self.TournamentParticipants" />
@@ -1101,11 +959,7 @@
             <End Role="Organizators" EntitySet="Organizators" />
             <End Role="TournamentHistory" EntitySet="TournamentHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__Playe__59063A47" Association="Self.FK__Tournamen__Playe__59063A47">
-            <End Role="Player" EntitySet="Player" />
-            <End Role="TournamentParticipants" EntitySet="TournamentParticipants" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__Playe__6EF57B66" Association="Self.FK__Tournamen__Playe__6EF57B66">
+          <AssociationSet Name="FK__Tournamen__Playe__4E88ABD4" Association="Self.FK__Tournamen__Playe__4E88ABD4">
             <End Role="Player" EntitySet="Player" />
             <End Role="TournamentParticipants" EntitySet="TournamentParticipants" />
           </AssociationSet>
@@ -1129,11 +983,7 @@
             <End Role="Status" EntitySet="Status" />
             <End Role="Tournaments" EntitySet="Tournaments" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__TeamI__5DCAEF64" Association="Self.FK__Tournamen__TeamI__5DCAEF64">
-            <End Role="Team" EntitySet="Team" />
-            <End Role="TournamentTeam" EntitySet="TournamentTeam" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__TeamI__70DDC3D8" Association="Self.FK__Tournamen__TeamI__70DDC3D8">
+          <AssociationSet Name="FK__Tournamen__TeamI__534D60F1" Association="Self.FK__Tournamen__TeamI__534D60F1">
             <End Role="Team" EntitySet="Team" />
             <End Role="TournamentTeam" EntitySet="TournamentTeam" />
           </AssociationSet>
@@ -1141,19 +991,11 @@
             <End Role="Tournaments" EntitySet="Tournaments" />
             <End Role="TournamentHistory" EntitySet="TournamentHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__Tourn__59FA5E80" Association="Self.FK__Tournamen__Tourn__59FA5E80">
+          <AssociationSet Name="FK__Tournamen__Tourn__4F7CD00D" Association="Self.FK__Tournamen__Tourn__4F7CD00D">
             <End Role="Tournaments" EntitySet="Tournaments" />
             <End Role="TournamentParticipants" EntitySet="TournamentParticipants" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__Tourn__6FE99F9F" Association="Self.FK__Tournamen__Tourn__6FE99F9F">
-            <End Role="Tournaments" EntitySet="Tournaments" />
-            <End Role="TournamentParticipants" EntitySet="TournamentParticipants" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__Tourn__5EBF139D" Association="Self.FK__Tournamen__Tourn__5EBF139D">
-            <End Role="Tournaments" EntitySet="Tournaments" />
-            <End Role="TournamentTeam" EntitySet="TournamentTeam" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Tournamen__Tourn__71D1E811" Association="Self.FK__Tournamen__Tourn__71D1E811">
+          <AssociationSet Name="FK__Tournamen__Tourn__5441852A" Association="Self.FK__Tournamen__Tourn__5441852A">
             <End Role="Tournaments" EntitySet="Tournaments" />
             <End Role="TournamentTeam" EntitySet="TournamentTeam" />
           </AssociationSet>
@@ -1163,9 +1005,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище TournamentDB_422_GabdrakhmanovModelContainer" CdmEntityContainer="TournamentDB_422_GabdrakhmanovEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище TournamentDB_422_GabdraxmanovModelContainer" CdmEntityContainer="TournamentDB_422_GabdraxmanovEntities">
           <EntitySetMapping Name="AccesLevel">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.AccesLevel">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.AccesLevel">
               <MappingFragment StoreEntitySet="AccesLevel">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1173,7 +1015,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Format">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.Format">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.Format">
               <MappingFragment StoreEntitySet="Format">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1181,7 +1023,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Game">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.Game">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.Game">
               <MappingFragment StoreEntitySet="Game">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1189,7 +1031,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Leaderboard">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.Leaderboard">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.Leaderboard">
               <MappingFragment StoreEntitySet="Leaderboard">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TournamentId" ColumnName="TournamentId" />
@@ -1201,7 +1043,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Matches">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.Matches">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.Matches">
               <MappingFragment StoreEntitySet="Matches">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TournamentId" ColumnName="TournamentId" />
@@ -1214,7 +1056,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Organizators">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.Organizators">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.Organizators">
               <MappingFragment StoreEntitySet="Organizators">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1226,7 +1068,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Player">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.Player">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.Player">
               <MappingFragment StoreEntitySet="Player">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1242,7 +1084,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Role">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.Role">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1250,7 +1092,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Stats">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.Stats">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.Stats">
               <MappingFragment StoreEntitySet="Stats">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TournamentId" ColumnName="TournamentId" />
@@ -1262,26 +1104,15 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Status">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.Status">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.Status">
               <MappingFragment StoreEntitySet="Status">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Team">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.Team">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.Team">
               <MappingFragment StoreEntitySet="Team">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1294,7 +1125,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TournamentHistory">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.TournamentHistory">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.TournamentHistory">
               <MappingFragment StoreEntitySet="TournamentHistory">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TournamentId" ColumnName="TournamentId" />
@@ -1303,7 +1134,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TournamentParticipants">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.TournamentParticipants">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.TournamentParticipants">
               <MappingFragment StoreEntitySet="TournamentParticipants">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TournamentId" ColumnName="TournamentId" />
@@ -1313,7 +1144,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Tournaments">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.Tournaments">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.Tournaments">
               <MappingFragment StoreEntitySet="Tournaments">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -1327,7 +1158,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TournamentTeam">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.TournamentTeam">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.TournamentTeam">
               <MappingFragment StoreEntitySet="TournamentTeam">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TournamentId" ColumnName="TournamentId" />
@@ -1337,7 +1168,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Viewers">
-            <EntityTypeMapping TypeName="TournamentDB_422_GabdrakhmanovModel.Viewers">
+            <EntityTypeMapping TypeName="TournamentDB_422_GabdraxmanovModel.Viewers">
               <MappingFragment StoreEntitySet="Viewers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Login" ColumnName="Login" />

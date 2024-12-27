@@ -20,8 +20,6 @@ namespace Tournament_422_Gabdrakhmanov.Components
         public Nullable<System.DateTime> RegistrationDate { get; set; }
     
         public virtual Player Player { get; set; }
-        public virtual Player Player1 { get; set; }
         public virtual Tournaments Tournaments { get; set; }
-        public virtual Tournaments Tournaments1 { get; set; }
     }
 }

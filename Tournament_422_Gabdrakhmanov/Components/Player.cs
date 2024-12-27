@@ -18,7 +18,6 @@ namespace Tournament_422_Gabdrakhmanov.Components
         public Player()
         {
             this.TournamentParticipants = new HashSet<TournamentParticipants>();
-            this.TournamentParticipants1 = new HashSet<TournamentParticipants>();
             this.Stats = new HashSet<Stats>();
         }
     
@@ -35,8 +34,6 @@ namespace Tournament_422_Gabdrakhmanov.Components
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TournamentParticipants> TournamentParticipants { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TournamentParticipants> TournamentParticipants1 { get; set; }
         public virtual Role Role1 { get; set; }
         public virtual Team Team { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

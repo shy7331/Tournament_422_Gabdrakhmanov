@@ -13,10 +13,10 @@ namespace Tournament_422_Gabdrakhmanov.Components
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TournamentDB_422_GabdrakhmanovEntities : DbContext
+    public partial class TournamentDB_422_GabdraxmanovEntities : DbContext
     {
-        public TournamentDB_422_GabdrakhmanovEntities()
-            : base("name=TournamentDB_422_GabdrakhmanovEntities")
+        public TournamentDB_422_GabdraxmanovEntities()
+            : base("name=TournamentDB_422_GabdraxmanovEntities")
         {
         }
     
@@ -35,7 +35,6 @@ namespace Tournament_422_Gabdrakhmanov.Components
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Stats> Stats { get; set; }
         public virtual DbSet<Status> Status { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Team> Team { get; set; }
         public virtual DbSet<TournamentHistory> TournamentHistory { get; set; }
         public virtual DbSet<TournamentParticipants> TournamentParticipants { get; set; }

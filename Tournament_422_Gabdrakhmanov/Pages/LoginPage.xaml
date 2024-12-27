@@ -11,10 +11,10 @@
     <Grid Background="White">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="300">
             <TextBlock Text="Логин" FontSize="16" Margin="0,0,0,5"/>
-            <TextBox x:Name="LoginTextBox" Height="30" Margin="0,0,0,15" />
+            <TextBox x:Name="LoginTextBox" Height="20" Margin="0,0,0,15" />
 
             <TextBlock Text="Пароль" FontSize="16" Margin="0,0,0,5"/>
-            <PasswordBox x:Name="PasswordBox" Height="30" Margin="0,0,0,15"/>
+            <PasswordBox x:Name="PasswordBox" Height="20" Margin="0,0,0,15"/>
 
             <Button Content="Войти" Height="40" FontWeight="Bold" Click="LoginButton_Click"/>
         </StackPanel>
