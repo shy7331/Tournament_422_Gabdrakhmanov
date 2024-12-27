@@ -15,17 +15,14 @@
         </Grid.RowDefinitions>
 
       
-        <TextBlock Text="Текущие турниры и матчи"
-                   FontSize="24"
-                   FontWeight="Bold"
-                   HorizontalAlignment="Center"
-                   Margin="0,0,0,20"/>
+        <TextBlock Text="Текущие турниры и матчи"  FontSize="24"  HorizontalAlignment="Center"  Margin="0,0,0,20"/>
 
      
         <TabControl Grid.Row="1">
        
             <TabItem Header="Турниры">
                 <StackPanel>
+                    <TextBox Text="Поиск по названию"> </TextBox>
                     <TextBox x:Name="SearchTextBox" Margin="0,0,0,10" TextChanged="SearchTextBox_TextChanged"/>
                     <DataGrid x:Name="TournamentsDataGrid" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,0,10">
                         <DataGrid.Columns>
@@ -38,7 +35,7 @@
                 </StackPanel>
             </TabItem>
 
-          
+
             <TabItem Header="Матчи">
                 <StackPanel>
                     <DataGrid x:Name="MatchesDataGrid" AutoGenerateColumns="False" IsReadOnly="True">
@@ -51,9 +48,6 @@
                     </DataGrid>
                 </StackPanel>
             </TabItem>
-
-         
-
         </TabControl>
     </Grid>
 </Page>

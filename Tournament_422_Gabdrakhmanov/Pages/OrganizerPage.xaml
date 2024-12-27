@@ -8,7 +8,67 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="OrganizerPage">
 
-    <Grid>
-        
+    <Grid Margin="10" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+  
+        <TextBlock Text="Управление турнирами"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+    
+        <TabControl Grid.Row="1" Margin="10">
+      
+            <TabItem Header="Турниры">
+                <StackPanel>
+                    <Button Content="Создать новый турнир"
+                            HorizontalAlignment="Left"
+                            Margin="0,0,0,10"
+                            Click="CreateTournamentButton_Click"/>
+                    <DataGrid x:Name="TournamentsDataGrid" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,0,10">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                            <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="200"/>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding Date}" Width="150"/>
+                            <DataGridTextColumn Header="Статус" Binding="{Binding Status.Name}" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+
+    
+            <TabItem Header="Матчи">
+                <StackPanel>
+                    <DataGrid x:Name="MatchesDataGrid" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                            <DataGridTextColumn Header="Команда 1" Binding="{Binding Team1.Name}" Width="200"/>
+                            <DataGridTextColumn Header="Команда 2" Binding="{Binding Team2.Name}" Width="200"/>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding Date}" Width="150"/>
+                            <DataGridTextColumn Header="Результат" Binding="{Binding Result}" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+
+            
+            <TabItem Header="Участники">
+                <StackPanel>
+                    <DataGrid x:Name="ParticipantsDataGrid" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                            <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="200"/>
+                            <DataGridTextColumn Header="Никнейм" Binding="{Binding NIckaname}" Width="200"/>
+                            <DataGridTextColumn Header="Рейтинг" Binding="{Binding Rating}" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Page>

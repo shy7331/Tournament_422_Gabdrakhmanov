@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tournament_422_Gabdrakhmanov.Components;
 
 namespace Tournament_422_Gabdrakhmanov.Pages
 {
@@ -20,9 +21,36 @@ namespace Tournament_422_Gabdrakhmanov.Pages
     /// </summary>
     public partial class OrganizerPage : Page
     {
+        private TournamentDB_422_GabdraxmanovEntities db = new TournamentDB_422_GabdraxmanovEntities();
+
         public OrganizerPage()
         {
             InitializeComponent();
+            LoadTournaments();
+            LoadMatches();
+            LoadParticipants();
+        }
+
+        private void LoadTournaments()
+        {
+            TournamentsDataGrid.ItemsSource = db.Tournaments.ToList();
+        }
+
+        private void LoadMatches()
+        {
+            MatchesDataGrid.ItemsSource = db.Matches.ToList();
+        }
+
+        private void LoadParticipants()
+        {
+            ParticipantsDataGrid.ItemsSource = db.Player.ToList();
+        }
+
+        private void CreateTournamentButton_Click(object sender, RoutedEventArgs e)
+        {
+           
+            NavigationService.Navigate(new CreateTournamentPage());
         }
     }
 }
+
