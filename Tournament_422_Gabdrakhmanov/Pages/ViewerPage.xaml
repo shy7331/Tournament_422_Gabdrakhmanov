@@ -8,7 +8,52 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ViewerPage">
 
-    <Grid>
-        
+    <Grid Margin="10" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+      
+        <TextBlock Text="Текущие турниры и матчи"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+     
+        <TabControl Grid.Row="1">
+       
+            <TabItem Header="Турниры">
+                <StackPanel>
+                    <TextBox x:Name="SearchTextBox" Margin="0,0,0,10" TextChanged="SearchTextBox_TextChanged"/>
+                    <DataGrid x:Name="TournamentsDataGrid" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,0,10">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="200"/>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding Date}" Width="150"/>
+                            <DataGridTextColumn Header="Статус" Binding="{Binding Status.Name}" Width="100"/>
+                            <DataGridTextColumn Header="Игра" Binding="{Binding Game.Name}" Width="150"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+
+          
+            <TabItem Header="Матчи">
+                <StackPanel>
+                    <DataGrid x:Name="MatchesDataGrid" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Команда 1" Binding="{Binding Team1.Name}" Width="200"/>
+                            <DataGridTextColumn Header="Команда 2" Binding="{Binding Team2.Name}" Width="200"/>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding Date}" Width="150"/>
+                            <DataGridTextColumn Header="Результат" Binding="{Binding Result}" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+
+         
+
+        </TabControl>
     </Grid>
 </Page>
