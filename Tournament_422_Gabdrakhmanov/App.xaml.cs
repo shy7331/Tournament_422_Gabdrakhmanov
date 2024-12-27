@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Tournament_422_Gabdrakhmanov.Components;
 
 namespace Tournament_422_Gabdrakhmanov
 {
@@ -13,5 +14,6 @@ namespace Tournament_422_Gabdrakhmanov
     /// </summary>
     public partial class App : Application
     {
+        public static TournamentDB_422_GabdrakhmanovEntities db = new TournamentDB_422_GabdrakhmanovEntities();
     }
 }

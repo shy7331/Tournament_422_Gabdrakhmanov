@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Tournament_422_Gabdrakhmanov.Pages;
 
-namespace Tournament_422_Gabdrakhmanov
+namespace Tournament_422_Gabdrakhmanov.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для OrganizerPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OrganizerPage : Page
     {
-        public MainWindow()
+        public OrganizerPage()
         {
             InitializeComponent();
-            MainFrame.Navigate(new LoginPage());
         }
     }
 }
